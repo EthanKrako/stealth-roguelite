@@ -53,6 +53,6 @@ public class PlayerStateMachine : MonoBehaviour
     public void onMovementInput(InputAction.CallbackContext context) {
         _currentMovementInput = context.ReadValue<Vector2>();
         _isMovementPressed = _currentMovementInput.x != 0 || _currentMovementInput.y != 0;
-        Debug.Log(_currentMovement);
+        //Debug.Log(_currentMovement);
     }
 }
