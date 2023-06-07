@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AiNavMesh : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private float waitTime = 1f;
     [SerializeField] private Transform target;
 
     private void Awake()
@@ -14,6 +15,10 @@ public class AiNavMesh : MonoBehaviour
     }
 
     private void Update() {
-        agent.SetDestination(target.position);
+        if (waitTime <= 0) {
+            agent.SetDestination(target.position);
+        } else {
+            waitTime -= Time.deltaTime;
+        }
     }
 }
